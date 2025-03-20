@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <math.h>
+int main()
+{
+    int num;
+    printf("Enter a number:\n");
+    scanf("%d", &num);
+    int original_num = num;
+    int sum = 0;
+    int no_of_digit = 0;
+    int temp = num;
+    while (temp != 0)
+    {
+        temp = temp / 10;
+        no_of_digit = no_of_digit + 1;
+    }
+    temp = num;
+    while (temp != 0)
+    {
+        int rem = temp % 10;
+        sum = sum + pow(rem, no_of_digit);
+        temp = temp / 10;
+    }
+    if (sum == num)
+    {
+        printf("%d is an Armstrong number.\n", num);
+    }
+    else
+    {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+
+    return 0;
+}
